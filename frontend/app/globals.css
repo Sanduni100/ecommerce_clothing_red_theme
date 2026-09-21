@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #fff8f5;
+  --bg-elevated: #ffffff;
+  --text: #241016;
+  --text-muted: #7a5a61;
+  --border: #f1dbe0;
+  --accent: #a00b24;
+  --accent-strong: #f9022b;
+}
+
+.dark {
+  --bg: #1a0f13;
+  --bg-elevated: #241419;
+  --text: #fdf0f2;
+  --text-muted: #c79aa4;
+  --border: #3a222a;
+  --accent: #f9a4b3;
+  --accent-strong: #ef6b84;
+}
+
+* { border-color: var(--border); }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+}
+
+.text-muted { color: var(--text-muted); }
+.bg-elevated { background: var(--bg-elevated); }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
+
+@keyframes slide-in {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+.animate-slide-in { animation: slide-in 0.28s ease-out; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fade-up 0.5s ease-out both; }
